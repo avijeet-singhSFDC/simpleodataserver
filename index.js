@@ -24,4 +24,5 @@ var odataServer = ODataServer("http://localhost:1337")
     .adapter(Adapter(function(es, cb) { cb(null, db)}));
  
  
-http.createServer(odataServer.handle.bind(odataServer)).listen(1337);
+http.createServer(odataServer.handle.bind(odataServer)).listen(process.env.PORT||3000);
+console.log(process.env.PORT);
